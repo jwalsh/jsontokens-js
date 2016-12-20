@@ -9,7 +9,8 @@
     "unit": "./node_modules/.bin/watch './node_modules/.bin/babel-node src/test/unitTests.js' src",
     "prepublish": "npm run compile",
     "test-browserify": "npm run compile; node lib/test/testBrowserify.js",
-    "browserify-app": "npm run compile; browserify lib/test/app.js -o lib/test/bundle.js"
+    "browserify-app": "npm run compile; browserify lib/test/app.js -o lib/test/bundle.js",
+    "release": "npm version patch && npm publish --access public"
   },
   "engines": {
     "node": ">=5.10.0"
