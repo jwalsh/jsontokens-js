@@ -1,14 +1,18 @@
 {
-  "name": "jsontokens",
+  "name": "@jwalsh/jsontokens",
   "version": "0.6.2",
   "description": "node.js library for encoding, decoding, and verifying JSON Web Tokens (JWTs)",
   "main": "lib/index.js",
   "scripts": {
     "compile": "babel --presets es2015 src -d lib",
     "test": "npm run compile; node lib/test/unitTests.js",
+    "unit": "./node_modules/.bin/watch './node_modules/.bin/babel-node src/test/unitTests.js' src",
     "prepublish": "npm run compile",
     "test-browserify": "npm run compile; node lib/test/testBrowserify.js",
     "browserify-app": "npm run compile; browserify lib/test/app.js -o lib/test/bundle.js"
+  },
+  "engines": {
+    "node": ">=5.10.0"
   },
   "repository": {
     "type": "git",
@@ -39,13 +43,15 @@
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-preset-es2015": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
     "babelify": "^7.3.0",
     "brfs": "^1.4.3",
     "browserify": "^13.1.1",
     "browserify-test": "^2.2.0",
     "phantomjs-prebuilt": "^2.1.13",
     "tape": "^4.2.0",
-    "tape-run": "^2.1.4"
+    "tape-run": "^2.1.4",
+    "watch": "^1.0.1"
   },
   "dependencies": {
     "base64url": "^2.0.0",
